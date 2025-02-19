@@ -1,3 +1,4 @@
+
 //hw5-12.cpp - displays the total owed
 //Created/revised by <your name> on <current date>
 
@@ -7,31 +8,22 @@ using namespace std;
 
 int main()
 {
-	const double Discount_Rate = 0.10;
-	const double SHIP_CHG1 = 0.99;
-	const double SHIP_CHG2 = 4.99;
-	double amtOwed = 0.00;
-	char member = ' ';
+	double price1 = 0.0;
+	double price2 = 0.0;
+	double total = 0.0;
 
-	std::cout << "Amount owed before any discount and shipping: ";
-	std::cin >> amtOwed;
-	std::cout << "premier club member (Y/N)?";
-	std::cin >> member;
-	std::cout << std::fixed << std::setprecision(2);
+	cout << "Enter first price: ";
+	cin >> price1;
+	cout << "Enter second price: ";
+	cin >> price2;
 
-	
-	
-	if (toupper(member) == 'Y')
-		amtOwed -= amtOwed * Discount_Rate;
-	   //end if
-	if (amtOwed >= 100.0)
-		 amtOwed += SHIP_CHG1;
+	if (price1 >= price2)
+		total = price1 + (price2 / 2.0);
 	else
-		amtOwed += SHIP_CHG2;
-	//end if
-	std::cout << fixed << setprecision(2);
-	std::cout << "Amount owed after any discount and shipping: " << amtOwed << std::endl;
-	
+		total = price2 + (price1 / 2.0);
+
+	cout << fixed << setprecision(2);
+	cout << "Amount owed: $" << total << endl;
 
 	return 0;
-}	//end of main function
+}
